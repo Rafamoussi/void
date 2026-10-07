@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block titulo %}Início{% endblock %}
+
+{% block conteudo %}
+<section class="banner-void mb-5">
+  <div class="banner-overlay p-4 p-md-5">
+    <p class="tags-void mb-2">Y2K • GRUNGE • VINTAGE • DARK GOTH</p>
+    <h1 class="logo-void logo-grande">VOID</h1>
+    <p class="lead banner-texto">Moda alternativa para quem vive à margem. Peças underground,
+      inspiradas nos anos 2000, no grunge dos 90, no vintage e na estética gótica.</p>
+    <a href="{{ url_for('listar_produtos') }}" class="btn btn-void me-2 mb-2">Ver produtos</a>
+    <a href="{{ url_for('listar_pedidos') }}" class="btn btn-outline-void mb-2">Ver pedidos</a>
+  </div>
+</section>
+
+<div class="row g-4 mb-5">
+  <div class="col-md-4">
+    <div class="card card-void card-total h-100">
+      <div class="card-body">
+        <span class="badge badge-void mb-3">USUÁRIOS</span>
+        <h2 class="numero-total">{{ total_usuarios }}</h2>
+        <p class="text-secondary-void mb-3">Total de usuários cadastrados</p>
+        <a href="{{ url_for('listar_usuarios') }}" class="link-void">Ver listagem →</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-void card-total h-100">
+      <div class="card-body">
+        <span class="badge badge-void mb-3">PRODUTOS</span>
+        <h2 class="numero-total">{{ total_produtos }}</h2>
+        <p class="text-secondary-void mb-3">Total de produtos no catálogo</p>
+        <a href="{{ url_for('listar_produtos') }}" class="link-void">Ver listagem →</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-void card-total h-100">
+      <div class="card-body">
+        <span class="badge badge-void mb-3">PEDIDOS</span>
+        <h2 class="numero-total">{{ total_pedidos }}</h2>
+        <p class="text-secondary-void mb-3">Total de pedidos realizados</p>
+        <a href="{{ url_for('listar_pedidos') }}" class="link-void">Ver listagem →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="titulo-secao mb-4">Produtos em destaque</h2>
+<div class="row g-4">
+  {% for p in destaques %}
+  <div class="col-6 col-lg-3">
+    <div class="card card-void card-produto h-100">
+      <div class="produto-img">
+        {% if p.imagem %}
+          <img src="{{ p.imagem }}" alt="{{ p.nome }}">
+        {% else %}
+          <span>{{ p.categoria }}</span>
+        {% endif %}
+      </div>
+      <div class="card-body">
+        <span class="badge badge-categoria mb-2">{{ p.categoria }}</span>
+        <h3 class="h6 mb-1">{{ p.nome }}</h3>
+        <p class="preco mb-0">{{ p.preco|moeda }}</p>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p class="text-secondary-void">Nenhum produto cadastrado.</p>
+  {% endfor %}
+</div>
+{% endblock %}

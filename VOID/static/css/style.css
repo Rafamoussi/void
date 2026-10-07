@@ -1,0 +1,234 @@
+/* ==========================================================
+   VOID — Identidade visual (Y2K • Grunge • Vintage • Dark Goth)
+   Personalização do Bootstrap 5
+   ========================================================== */
+:root {
+  --void-preto: #0a0a0b;
+  --void-grafite: #141416;
+  --void-cinza: #1f1f23;
+  --void-borda: #2e2e34;
+  --void-vinho: #5c0f1f;
+  --void-vermelho: #8b1a2b;
+  --void-vermelho-claro: #b3263c;
+  --void-branco: #f2f0ed;
+  --void-prata: #b8bcc4;
+  --void-prata-escuro: #7d818a;
+}
+
+body {
+  background: radial-gradient(circle at 20% 0%, #1a0a0f 0%, var(--void-preto) 45%) fixed;
+  color: var(--void-branco);
+  font-family: "Archivo", system-ui, sans-serif;
+}
+
+/* ---------- Tipografia ---------- */
+.logo-void {
+  font-family: "UnifrakturMaguntia", serif;
+  font-size: 2rem;
+  color: var(--void-branco) !important;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(179, 38, 60, .6);
+}
+.logo-grande { font-size: clamp(3.5rem, 10vw, 6rem); line-height: 1; }
+
+.tags-void, .footer-tags {
+  font-family: "Space Mono", monospace;
+  letter-spacing: 3px;
+  font-size: .8rem;
+  color: var(--void-prata);
+}
+
+.titulo-secao {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.6rem;
+  border-left: 4px solid var(--void-vermelho);
+  padding-left: .75rem;
+}
+.text-center.titulo-secao { border-left: 0; padding-left: 0; }
+
+.text-secondary-void { color: var(--void-prata-escuro) !important; }
+
+/* ---------- Navbar ---------- */
+.navbar-void {
+  background: rgba(10, 10, 11, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--void-borda);
+  box-shadow: 0 1px 0 var(--void-vinho);
+}
+.navbar-void .nav-link {
+  font-family: "Space Mono", monospace;
+  font-size: .85rem;
+  letter-spacing: 1px;
+  color: var(--void-prata) !important;
+}
+.navbar-void .nav-link:hover, .navbar-void .nav-link.show { color: var(--void-branco) !important; }
+.nav-sair { color: var(--void-vermelho-claro) !important; }
+
+.dropdown-menu-dark {
+  background: var(--void-grafite);
+  border: 1px solid var(--void-borda);
+  border-radius: 0;
+}
+.dropdown-menu-dark .dropdown-item:hover { background: var(--void-vinho); }
+
+/* ---------- Cards ---------- */
+.card-void {
+  background: linear-gradient(160deg, var(--void-cinza), var(--void-grafite));
+  border: 1px solid var(--void-borda);
+  border-radius: 4px;
+  color: var(--void-branco);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+}
+.card-total { position: relative; overflow: hidden; transition: transform .2s; }
+.card-total:hover { transform: translateY(-3px); border-color: var(--void-vermelho); }
+.card-total::after {
+  content: "";
+  position: absolute; top: 0; right: 0;
+  width: 60px; height: 60px;
+  border-top: 2px solid var(--void-prata-escuro);
+  border-right: 2px solid var(--void-prata-escuro);
+  opacity: .4;
+}
+.numero-total {
+  font-family: "Space Mono", monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(180deg, #ffffff, var(--void-prata-escuro));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-produto .produto-img {
+  aspect-ratio: 1;
+  background: repeating-linear-gradient(45deg, #18181b 0 10px, #1d1d21 10px 20px);
+  display: flex; align-items: center; justify-content: center;
+  border-bottom: 1px solid var(--void-borda);
+  overflow: hidden;
+}
+.card-produto .produto-img span {
+  font-family: "UnifrakturMaguntia", serif;
+  font-size: 1.6rem;
+  color: var(--void-vermelho-claro);
+}
+.card-produto .produto-img img { width: 100%; height: 100%; object-fit: cover; }
+.preco { font-family: "Space Mono", monospace; color: var(--void-prata); }
+
+/* ---------- Banner ---------- */
+.banner-void {
+  background: url("../img/banner.jpg") center / cover no-repeat, var(--void-vinho);
+  border: 1px solid var(--void-borda);
+  min-height: 380px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.banner-overlay {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(10,10,11,.95) 0%, rgba(10,10,11,.6) 60%, rgba(10,10,11,.2) 100%);
+}
+.banner-texto { max-width: 560px; color: var(--void-prata); }
+
+/* ---------- Botões ---------- */
+.btn-void {
+  background: var(--void-vermelho);
+  color: var(--void-branco);
+  border: 1px solid var(--void-vermelho-claro);
+  border-radius: 2px;
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn-void:hover { background: var(--void-vermelho-claro); color: #fff; box-shadow: 0 0 14px rgba(179,38,60,.5); }
+
+.btn-outline-void {
+  border: 1px solid var(--void-prata-escuro);
+  color: var(--void-prata);
+  border-radius: 2px;
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn-outline-void:hover { background: var(--void-branco); color: var(--void-preto); }
+
+.btn-secondary-void {
+  background: var(--void-cinza);
+  border: 1px solid var(--void-borda);
+  color: var(--void-prata);
+  border-radius: 2px;
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+}
+.btn-secondary-void:hover { background: var(--void-borda); color: var(--void-branco); }
+
+.btn-danger-void {
+  background: transparent;
+  border: 1px solid var(--void-vermelho);
+  color: var(--void-vermelho-claro);
+  border-radius: 2px;
+  font-family: "Space Mono", monospace;
+  text-transform: uppercase;
+}
+.btn-danger-void:hover { background: var(--void-vermelho); color: #fff; }
+
+.link-void { color: var(--void-prata); text-decoration: none; font-family: "Space Mono", monospace; }
+.link-void:hover { color: var(--void-vermelho-claro); }
+
+/* ---------- Badges ---------- */
+.badge-void { background: var(--void-vinho); border: 1px solid var(--void-vermelho); font-family: "Space Mono", monospace; letter-spacing: 1px; }
+.badge-categoria { background: transparent; border: 1px solid var(--void-prata-escuro); color: var(--void-prata); font-weight: 400; }
+
+/* ---------- Tabelas ---------- */
+.table-void {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--void-branco);
+  --bs-table-hover-bg: rgba(92, 15, 31, .25);
+  --bs-table-hover-color: var(--void-branco);
+  --bs-table-border-color: var(--void-borda);
+}
+.table-void thead th {
+  font-family: "Space Mono", monospace;
+  font-size: .75rem;
+  letter-spacing: 2px;
+  color: var(--void-prata);
+  background: var(--void-preto);
+  padding: 1rem .75rem;
+}
+
+/* ---------- Formulários ---------- */
+.form-label { color: var(--void-prata); font-size: .85rem; text-transform: uppercase; letter-spacing: 1px; }
+.form-control, .form-select {
+  background-color: var(--void-preto);
+  border: 1px solid var(--void-borda);
+  color: var(--void-branco);
+  border-radius: 2px;
+}
+.form-control:focus, .form-select:focus {
+  background-color: var(--void-preto);
+  color: var(--void-branco);
+  border-color: var(--void-vermelho-claro);
+  box-shadow: 0 0 0 .2rem rgba(179, 38, 60, .25);
+}
+.form-control::placeholder { color: var(--void-prata-escuro); }
+.form-select { --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23b8bcc4' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"); }
+input[type="date"] { color-scheme: dark; }
+
+/* ---------- Alertas ---------- */
+.alert-void { border-radius: 2px; background: var(--void-cinza); color: var(--void-branco); border: 1px solid var(--void-borda); border-left-width: 4px; }
+.alert-success.alert-void { border-left-color: #3fa66b; }
+.alert-warning.alert-void { border-left-color: #d4a017; }
+.alert-danger.alert-void { border-left-color: var(--void-vermelho-claro); }
+
+/* ---------- Login (sem menu) ---------- */
+.login-page {
+  background:
+    linear-gradient(rgba(10,10,11,.85), rgba(10,10,11,.95)),
+    url("../img/banner.jpg") center / cover no-repeat,
+    var(--void-preto);
+}
+.login-card { width: 100%; max-width: 420px; }
+
+/* ---------- Footer ---------- */
+.footer-void { background: var(--void-preto); border-top: 1px solid var(--void-borda); }

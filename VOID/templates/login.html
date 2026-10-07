@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | VOID Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Space+Mono:wght@400;700&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<!-- Template SEM menu superior -->
+<body class="login-page d-flex align-items-center justify-content-center min-vh-100 p-3">
+  <div class="card card-void login-card p-4 p-md-5">
+    <div class="text-center mb-4">
+      <h1 class="logo-void logo-grande mb-0">VOID</h1>
+      <p class="tags-void small mb-0">Y2K • GRUNGE • VINTAGE • DARK GOTH</p>
+    </div>
+
+    <h2 class="titulo-secao text-center mb-4">Login</h2>
+
+    <form method="POST" action="{{ url_for('login') }}">
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required>
+      </div>
+      <div class="mb-2">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" name="senha" placeholder="••••••••" required>
+      </div>
+      <div class="text-end mb-4">
+        <a href="#" class="link-void small">Recuperar Senha</a>
+      </div>
+      <button type="submit" class="btn btn-void w-100 mb-3">Entrar</button>
+      <a href="{{ url_for('cadastrar_usuario') }}" class="btn btn-outline-void w-100">CADASTRAR</a>
+    </form>
+  </div>
+</body>
+</html>
